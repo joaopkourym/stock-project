@@ -4,6 +4,7 @@ public class Product {
     private String productName;
     private double price;
     private double totalPrice;
+    private int stockAddedQuantity;
     private int stockQuantity;
     Scanner scanner = new Scanner(System.in);
         
@@ -22,5 +23,14 @@ public class Product {
 
         System.out.format("Product data: %s, $%.2f, %d units, Total price: $%.2f\n", productName, price, stockQuantity, totalPrice);
     }
-}
 
+    public void addProductQuantity() {
+        System.out.print("Enter the number of products to be added in stock: ");
+        stockAddedQuantity = scanner.nextInt();
+        System.out.println(stockQuantity);
+        stockQuantity += stockAddedQuantity;
+        System.out.println(stockQuantity);
+    
+    }
+
+}
