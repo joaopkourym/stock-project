@@ -5,6 +5,7 @@ public class Product {
     private double price;
     private double totalPrice;
     private int stockAddedQuantity;
+    private int stockRemovedQuantity;
     private int stockQuantity;
     Scanner scanner = new Scanner(System.in);
         
@@ -33,4 +34,9 @@ public class Product {
     
     }
 
+    public void removeProductQuantity() {
+        System.out.print("Enter the number of products to be removed from stock: ");
+        stockRemovedQuantity = scanner.nextInt();
+        stockQuantity -= stockRemovedQuantity;
+    }
 }
