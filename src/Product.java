@@ -16,7 +16,6 @@ public class Product {
         productName = scanner.next();
 
         System.out.print("Price: ");
-        
         try {
             price = scanner.nextDouble();
             System.out.print("Quantity in stock: ");
