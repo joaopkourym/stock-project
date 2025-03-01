@@ -85,14 +85,17 @@ public class Product {
     /**
      * Removes specified quantity from stock and updates total price.
      * Prompts user for quantity to remove and updates stock information.
-     * Note: Does not prevent negative stock quantities.
      */
     private void removeProductQuantity() {
         System.out.print("Enter the number of products to be removed from stock: ");
         stockRemovedQuantity = scanner.nextInt();
         stockQuantity -= stockRemovedQuantity;
-        totalPrice = price * stockQuantity;
-        System.out.format("Current stock quantity: %d.\n", stockQuantity);
+        if (stockQuantity < 0) {
+            System.out.println("ERROR!!! Invalid quantity of stock");
+        }else{
+            totalPrice = price * stockQuantity;
+            System.out.format("Current stock quantity: %d.\n", stockQuantity);
+        }
     }
 
     /**
